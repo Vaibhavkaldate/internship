@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./../styles/login.css"; 
+import "./../styles/login.css";
+import loginImage from "./../components/login.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -9,12 +10,6 @@ const Login = () => {
 
   const handleLogin = () => {
     console.log("Logging in with:", email, password);
-   
-    if (email === "admin@.com" && password === "password") {
-      navigate("/dashboard"); 
-    } else {
-      alert("Invalid credentials");
-    }
   };
 
   return (
@@ -23,13 +18,12 @@ const Login = () => {
       
         <div className="login-left">
           <div className="login-text">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60ZhhZ64r6YLfiavD9QkAzt7ThtENCatccw&s" alt="Login" className="login-img" />
+            <img src={loginImage} alt="Login" className="login-img" />
             <h2>Welcome ! </h2>
             <p>Login to get access</p>
           </div>
         </div>
 
-     
         <div className="login-right">
           <h2 className="login-title">Sign in</h2>
           <p className="login-subtitle"> Please enter your credentials.</p>

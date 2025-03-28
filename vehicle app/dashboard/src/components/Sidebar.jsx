@@ -1,5 +1,5 @@
 import React from "react";
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
@@ -11,6 +11,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import InfoIcon from "@mui/icons-material/Info";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import logo from "../assets/logo.png"; 
 
 const menuItems = [
   { text: "Home", icon: <HomeIcon />, path: "/" },
@@ -35,10 +36,8 @@ const Sidebar = () => {
         "& .MuiDrawer-paper": { width: 240, backgroundColor: "#0D47A1", color: "white" },
       }}
     >
-      <Toolbar>
-        <Typography variant="h6" sx={{ fontWeight: "bold", padding: "10px" }}>
-          VehicleVista
-        </Typography>
+      <Toolbar sx={{ display: "flex", justifyContent: "center", padding: "10px" }}>
+        <img src={logo} alt="Mahyco Grow" style={{ width: "180px", height: "auto" }} />
       </Toolbar>
       <List>
         {menuItems.map((item) => (
