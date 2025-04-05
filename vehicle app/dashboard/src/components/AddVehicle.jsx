@@ -52,7 +52,7 @@ const AddVehicle = () => {
             <TextField label="Manufacturer" name="manufacturer" value={vehicleData.manufacturer} onChange={handleChange} required fullWidth />
           </Grid>
           <Grid item xs={6}>
-            <TextField label="Year" name="year" type="number" value={vehicleData.year} onChange={handleChange} required fullWidth />
+            <TextField label="Year of Manufacturing" name="year" type="number" value={vehicleData.year} onChange={handleChange} required fullWidth />
           </Grid>
           <Grid item xs={6}>
             <TextField label="Fuel Type" name="fuelType" value={vehicleData.fuelType} onChange={handleChange} required fullWidth />

@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: "#1565C0", color: "white" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h6">Welcome to VehicleVista</Typography>
+        <Typography variant="h6">Welcome !!</Typography>
         <div>
           <IconButton color="inherit">
             <NotificationsIcon />
