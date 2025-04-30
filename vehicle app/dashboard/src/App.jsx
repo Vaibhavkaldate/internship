@@ -13,6 +13,7 @@ import AddLocation from "./components/AddLocation";
 import AboutUs from "./components/AboutUs";
 import Settings from "./components/Settings";
 import Logout from "./components/Logout";
+import SupportHelp from "./components/SupportHelp"; // Import the new component
 import "./styles/App.css";
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/add-location" element={<AddLocation />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/support-help" element={<SupportHelp />} /> 
             <Route path="/logout" element={<Logout />} />
           </Routes>
         </div>

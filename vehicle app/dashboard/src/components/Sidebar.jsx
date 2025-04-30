@@ -11,6 +11,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import InfoIcon from "@mui/icons-material/Info";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import HelpIcon from "@mui/icons-material/Help";
 import logo from "../assets/logo.png"; 
 
 const menuItems = [
@@ -23,6 +24,7 @@ const menuItems = [
   { text: "Add Location", icon: <LocationOnIcon />, path: "/add-location" },
   { text: "About Us", icon: <InfoIcon />, path: "/about-us" },
   { text: "Settings", icon: <SettingsIcon />, path: "/settings" },
+  { text: "Support and Help", icon: <HelpIcon />, path: "/support-help" },
   { text: "Logout", icon: <ExitToAppIcon />, path: "/logout" },
 ];
 
