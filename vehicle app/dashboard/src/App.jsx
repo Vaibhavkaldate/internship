@@ -13,32 +13,35 @@ import AddLocation from "./components/AddLocation";
 import AboutUs from "./components/AboutUs";
 import Settings from "./components/Settings";
 import Logout from "./components/Logout";
-import SupportHelp from "./components/SupportHelp"; // Import the new component
+import SupportHelp from "./components/SupportHelp";
+import { BookingProvider } from "./components/context/BookingContext"; // ✅ Booking context
 import "./styles/App.css";
 
 const App = () => {
   return (
-    <div className="dashboard-container">
-      <Sidebar />
-      <div className="main-content">
-        <Navbar />
-        <div className="content-area">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/assign-vehicle" element={<AssignVehicle />} />
-            <Route path="/release-booking" element={<ReleaseBooking />} />
-            <Route path="/update-booking" element={<UpdateBooking />} />
-            <Route path="/add-driver" element={<AddDriver />} />
-            <Route path="/add-vehicle" element={<AddVehicle />} />
-            <Route path="/add-location" element={<AddLocation />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/support-help" element={<SupportHelp />} /> 
-            <Route path="/logout" element={<Logout />} />
-          </Routes>
+    <BookingProvider> {/* ✅ Context wraps entire app */}
+      <div className="dashboard-container">
+        <Sidebar />
+        <div className="main-content">
+          <Navbar />
+          <div className="content-area">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/assign-vehicle" element={<AssignVehicle />} />
+              <Route path="/release-booking" element={<ReleaseBooking />} />
+              <Route path="/update-booking" element={<UpdateBooking />} />
+              <Route path="/add-driver" element={<AddDriver />} />
+              <Route path="/add-vehicle" element={<AddVehicle />} />
+              <Route path="/add-location" element={<AddLocation />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/support-help" element={<SupportHelp />} />
+              <Route path="/logout" element={<Logout />} />
+            </Routes>
+          </div>
         </div>
       </div>
-    </div>
+    </BookingProvider>
   );
 };
 

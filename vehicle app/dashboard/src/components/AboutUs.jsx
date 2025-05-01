@@ -1,128 +1,137 @@
 import React from "react";
 import {
-  Box,
-  Grid,
-  Typography,
-  TextField,
-  Button,
   Paper,
+  Typography,
+  Grid,
+  Box,
+  Divider,
+  Card,
+  CardContent,
 } from "@mui/material";
-import contactImage from "./../assets/contact.jpg";
+
+const blueHeader = {
+  color: "#0d47a1",
+  fontWeight: "bold",
+};
 
 const AboutUs = () => {
   return (
-    <Box p={4} display="flex" justifyContent="center">
-      <Paper
-        elevation={3}
-        sx={{
-          borderRadius: 3,
-          overflow: "hidden",
-          width: { xs: "100%", sm: "95%", md: "85%", lg: "75%" },
-          maxWidth: "950px",
-        }}
-      >
-        <Grid container>
-          {/* Left Section */}
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              backgroundColor: "#1565C0",
-              color: "white",
-              p: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              src={contactImage}
-              alt="Contact"
-              style={{
-                width: "100%",
-                maxWidth: "300px", // Increased image size
-                borderRadius: "10px",
-                marginBottom: "20px",
-              }}
-            />
-            <Typography variant="h5" fontWeight="bold" gutterBottom>
-              Get in Touch!
-            </Typography>
-            <Typography variant="body2" textAlign="center">
-              Send us a message.
-            </Typography>
-          </Grid>
+    <Paper
+      elevation={3}
+      sx={{
+        padding: "2rem",
+        marginTop: "2rem",
+        backgroundColor: "#f5fafd",
+        borderRadius: "16px",
+        maxWidth: "1000px",
+        mx: "auto",
+      }}
+    >
+      <Typography variant="h4" gutterBottom sx={blueHeader}>
+        About Us
+      </Typography>
 
-          {/* Right Section */}
-          <Grid item xs={12} md={6} sx={{ p: 4 }}>
-            <Typography variant="h6" fontWeight="bold" gutterBottom>
-              Send Notification
-            </Typography>
-            <Typography variant="body2" mb={2}>
-              Enter your details below.
-            </Typography>
-
-            <form>
-              <TextField
-                fullWidth
-                label="Enter email"
-                type="email"
-                variant="outlined"
-                sx={{
-                  mb: 2,
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "8px",
-                    height: "48px", // Slightly taller input
-                  },
-                  "& label.Mui-focused": {
-                    color: "#1565C0",
-                  },
-                  "& .MuiOutlinedInput-root.Mui-focused fieldset": {
-                    borderColor: "#1565C0",
-                  },
-                }}
-              />
-              <TextField
-                fullWidth
-                multiline
-                rows={4}
-                label="Message here"
-                variant="outlined"
-                sx={{
-                  mb: 3,
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "8px",
-                  },
-                  "& label.Mui-focused": {
-                    color: "#1565C0",
-                  },
-                  "& .MuiOutlinedInput-root.Mui-focused fieldset": {
-                    borderColor: "#1565C0",
-                  },
-                }}
-              />
-              <Button
-                variant="contained"
-                fullWidth
-                sx={{
-                  backgroundColor: "#1565C0",
-                  borderRadius: "8px",
-                  py: 1.4,
-                  fontWeight: "bold",
-                  "&:hover": {
-                    backgroundColor: "#0d47a1",
-                  },
-                }}
-              >
-                Send
-              </Button>
-            </form>
-          </Grid>
+      <Grid container spacing={3}>
+        {/* Who We Are */}
+        <Grid item xs={12}>
+          <Card elevation={1} sx={{ backgroundColor: "#ffffff" }}>
+            <CardContent>
+              <Typography variant="h6" sx={blueHeader}>
+                Mahyco – Empowering Agriculture Through Innovation
+              </Typography>
+              <Divider sx={{ my: 1 }} />
+              <Typography variant="body1" gutterBottom>
+                Mahyco Private Limited is focused on research and development,
+                production, processing, and marketing of seeds for India's
+                farming fraternity. Founded in 1964, Mahyco is the pioneer of
+                high-quality hybrid and open-pollinated seeds.
+              </Typography>
+              <Typography variant="body1">
+                Through cutting-edge technology and intensive research, Mahyco
+                has revolutionized the agricultural landscape of the country.
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
-      </Paper>
-    </Box>
+
+        {/* What We Do */}
+        <Grid item xs={12}>
+          <Card elevation={1} sx={{ backgroundColor: "#ffffff" }}>
+            <CardContent>
+              <Typography variant="h6" sx={blueHeader}>
+                What We Do
+              </Typography>
+              <Divider sx={{ my: 1 }} />
+              <Typography variant="body1">
+                Mahyco’s founding vision is to change India’s agricultural face
+                and help the country become self-sufficient in food production.
+              </Typography>
+              <Box mt={2}>
+                <ul>
+                  <li>Marketing Seeds</li>
+                  <li>Tech Licensing</li>
+                  <li>Tech Development</li>
+                </ul>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Purpose of This Software */}
+        <Grid item xs={12}>
+          <Card elevation={1} sx={{ backgroundColor: "#ffffff" }}>
+            <CardContent>
+              <Typography variant="h6" sx={blueHeader}>
+                Purpose of This Software
+              </Typography>
+              <Divider sx={{ my: 1 }} />
+              <Typography variant="body1">
+                This logistics system streamlines seed transportation
+                operations, vehicle tracking, driver assignment, and delivery
+                performance—ensuring timely, efficient service for internal
+                operations across all regions.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Departments */}
+        <Grid item xs={12}>
+          <Card elevation={1} sx={{ backgroundColor: "#ffffff" }}>
+            <CardContent>
+              <Typography variant="h6" sx={blueHeader}>
+                Departments Involved
+              </Typography>
+              <Divider sx={{ my: 1 }} />
+              <Box mt={1}>
+                <ul>
+                  <li>Logistics & Transport</li>
+                  <li>Inventory & Dispatch</li>
+                  <li>Admin & Management</li>
+                  <li>Drivers</li>
+                </ul>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Contact Information */}
+        <Grid item xs={12}>
+          <Card elevation={1} sx={{ backgroundColor: "#ffffff" }}>
+            <CardContent>
+              <Typography variant="h6" sx={blueHeader}>
+                Internal Contact
+              </Typography>
+              <Divider sx={{ my: 1 }} />
+              <Typography variant="body1">📍 Mahyco Head Office</Typography>
+              <Typography variant="body1">📞 1800-XXX-XXXX</Typography>
+              <Typography variant="body1">✉️ support@mahyco.in</Typography>
+              <Typography variant="body1">🕘 Mon–Sat, 9AM–6PM</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 };
 
