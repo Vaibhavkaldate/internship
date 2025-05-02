@@ -43,6 +43,11 @@ const AssignVehicle = () => {
       if (!formData[key]) newErrors[key] = true;
     });
 
+    
+    if (formData.startDate && formData.endDate && formData.endDate <= formData.startDate) {
+      newErrors.endDate = "End date must be greater than start date";
+    }
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
@@ -143,7 +148,7 @@ const AssignVehicle = () => {
             value={formData.endDate}
             onChange={handleChange}
             error={!!errors.endDate}
-            helperText={errors.endDate && "This field is required"}
+            helperText={errors.endDate ? errors.endDate : "This field is required"}
           />
         </Grid>
 

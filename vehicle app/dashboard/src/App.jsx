@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
@@ -14,12 +14,12 @@ import AboutUs from "./components/AboutUs";
 import Settings from "./components/Settings";
 import Logout from "./components/Logout";
 import SupportHelp from "./components/SupportHelp";
-import { BookingProvider } from "./components/context/BookingContext"; // ✅ Booking context
+import { BookingProvider } from "./components/context/BookingContext"; 
 import "./styles/App.css";
 
 const App = () => {
   return (
-    <BookingProvider> {/* ✅ Context wraps entire app */}
+    <BookingProvider> 
       <div className="dashboard-container">
         <Sidebar />
         <div className="main-content">

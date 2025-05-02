@@ -5,16 +5,20 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Butto
 
 const ReleaseBooking = () => {
   const navigate = useNavigate();
-  const { bookingData } = useBooking();
+  const { bookingData, setBookingData } = useBooking(); 
 
   const handleAccept = () => {
     navigate("/update-booking");
   };
 
   const handleReject = () => {
-    // Logic for rejecting can be added here
     console.log("Booking Rejected");
+   
+    setBookingData(null);  
   };
+
+  
+  const isNoData = !bookingData || Object.keys(bookingData).length === 0;
 
   return (
     <Paper elevation={3} sx={{ padding: "2rem", marginTop: "2rem", borderRadius: "16px", maxWidth: "1200px", mx: "auto", backgroundColor: "#f5fafd" }}>
@@ -22,73 +26,79 @@ const ReleaseBooking = () => {
         Release Booking
       </Typography>
 
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Booking ID</TableCell>
-              <TableCell>Vehicle Number</TableCell>
-              <TableCell>Driver ID</TableCell>
-              <TableCell>Driver Name</TableCell>
-              <TableCell>Vehicle Type</TableCell>
-              <TableCell>Vehicle Capacity</TableCell>
-              <TableCell>Route Location</TableCell>
-              <TableCell>Product Detail</TableCell>
-              <TableCell>Vehicle Status</TableCell>
-              <TableCell>Start Date</TableCell>
-              <TableCell>End Date</TableCell>
-              <TableCell>Action</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>{bookingData.bookingId}</TableCell>
-              <TableCell>{bookingData.vehicleNumber}</TableCell>
-              <TableCell>{bookingData.driverId}</TableCell>
-              <TableCell>{bookingData.driverName}</TableCell>
-              <TableCell>{bookingData.vehicleType}</TableCell>
-              <TableCell>{bookingData.vehicleCapacity}</TableCell>
-              <TableCell>{bookingData.routeLocation}</TableCell>
-              <TableCell>{bookingData.productDetail}</TableCell>
-              <TableCell>{bookingData.vehicleStatus}</TableCell>
-              <TableCell>{bookingData.startDate}</TableCell>
-              <TableCell>{bookingData.endDate}</TableCell>
-              <TableCell>
-                <Grid container spacing={2} justifyContent="center">
-                  <Grid item>
-                    <Button
-                      variant="contained"
-                      onClick={handleAccept}
-                      sx={{
-                        backgroundColor: "#0d47a1",
-                        color: "#fff",
-                        fontSize: "0.875rem", // Smaller size
-                        padding: "8px 20px", // Adjusted padding for smaller button
-                      }}
-                    >
-                      Accept
-                    </Button>
+      {isNoData ? (
+        <Typography variant="h6" sx={{ color: "#f44336", textAlign: "center", mt: 3 }}>
+          No vehicles are available to release.
+        </Typography>
+      ) : (
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Booking ID</TableCell>
+                <TableCell>Vehicle Number</TableCell>
+                <TableCell>Driver ID</TableCell>
+                <TableCell>Driver Name</TableCell>
+                <TableCell>Vehicle Type</TableCell>
+                <TableCell>Vehicle Capacity</TableCell>
+                <TableCell>Route Location</TableCell>
+                <TableCell>Product Detail</TableCell>
+                <TableCell>Vehicle Status</TableCell>
+                <TableCell>Start Date</TableCell>
+                <TableCell>End Date</TableCell>
+                <TableCell>Action</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>{bookingData.bookingId}</TableCell>
+                <TableCell>{bookingData.vehicleNumber}</TableCell>
+                <TableCell>{bookingData.driverId}</TableCell>
+                <TableCell>{bookingData.driverName}</TableCell>
+                <TableCell>{bookingData.vehicleType}</TableCell>
+                <TableCell>{bookingData.vehicleCapacity}</TableCell>
+                <TableCell>{bookingData.routeLocation}</TableCell>
+                <TableCell>{bookingData.productDetail}</TableCell>
+                <TableCell>{bookingData.vehicleStatus}</TableCell>
+                <TableCell>{bookingData.startDate}</TableCell>
+                <TableCell>{bookingData.endDate}</TableCell>
+                <TableCell>
+                  <Grid container spacing={2} justifyContent="center">
+                    <Grid item>
+                      <Button
+                        variant="contained"
+                        onClick={handleAccept}
+                        sx={{
+                          backgroundColor: "#0d47a1",
+                          color: "#fff",
+                          fontSize: "0.875rem",
+                          padding: "8px 20px",
+                        }}
+                      >
+                        Accept
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button
+                        variant="outlined"
+                        onClick={handleReject}
+                        sx={{
+                          color: "#0d47a1",
+                          borderColor: "#0d47a1",
+                          fontSize: "0.875rem",
+                          padding: "8px 20px",
+                        }}
+                      >
+                        Reject
+                      </Button>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Button
-                      variant="outlined"
-                      onClick={handleReject}
-                      sx={{
-                        color: "#0d47a1",
-                        borderColor: "#0d47a1",
-                        fontSize: "0.875rem", // Smaller size
-                        padding: "8px 20px", // Adjusted padding for smaller button
-                      }}
-                    >
-                      Reject
-                    </Button>
-                  </Grid>
-                </Grid>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
     </Paper>
   );
 };
