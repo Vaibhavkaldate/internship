@@ -8,11 +8,12 @@ import EditIcon from "@mui/icons-material/Edit";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import InfoIcon from "@mui/icons-material/Info";
+import ReportProblemIcon from "@mui/icons-material/ReportProblem";
+import FeedbackIcon from "@mui/icons-material/Feedback";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import HelpIcon from "@mui/icons-material/Help";
-import logo from "../assets/logo.png"; 
+import logo from "../assets/logo.png";
 
 const menuItems = [
   { text: "Home", icon: <HomeIcon />, path: "/" },
@@ -22,9 +23,10 @@ const menuItems = [
   { text: "Add Driver", icon: <PersonAddIcon />, path: "/add-driver" },
   { text: "Add Vehicle", icon: <DirectionsBusIcon />, path: "/add-vehicle" },
   { text: "Add Location", icon: <LocationOnIcon />, path: "/add-location" },
-  { text: "About Us", icon: <InfoIcon />, path: "/about-us" },
+  { text: "Incident Reports", icon: <ReportProblemIcon />, path: "/incident-reports" },
+  { text: "Feedback", icon: <FeedbackIcon />, path: "/feedback" },
   { text: "Settings", icon: <SettingsIcon />, path: "/settings" },
-  { text: "Support and Help", icon: <HelpIcon />, path: "/support-help" },
+  { text: "Support ", icon: <HelpIcon />, path: "/support-help" },
   { text: "Logout", icon: <ExitToAppIcon />, path: "/logout" },
 ];
 

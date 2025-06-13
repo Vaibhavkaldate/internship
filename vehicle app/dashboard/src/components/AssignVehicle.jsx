@@ -45,7 +45,7 @@ const AssignVehicle = () => {
 
     
     if (formData.startDate && formData.endDate && formData.endDate <= formData.startDate) {
-      newErrors.endDate = "End date must be greater than start date";
+      newErrors.endDate = "End date must be after start date";
     }
 
     if (Object.keys(newErrors).length > 0) {
