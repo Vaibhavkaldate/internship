@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 
 const Feedback = () => {
-  const feedbacks = []; // Placeholder for feedback entries
+  const feedbacks = []; 
 
   return (
     <Box

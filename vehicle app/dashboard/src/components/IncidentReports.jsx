@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 
 const IncidentReports = () => {
-  const reports = []; // No data yet
+  const reports = []; 
 
   return (
     <Box
